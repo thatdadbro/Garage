@@ -1,0 +1,1 @@
+<img src="{{ asset('images/garage-logo.png') }}" {{ $attributes }} />
