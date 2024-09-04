@@ -4,6 +4,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect('/vehicles/collection');
+});
+
 Route::prefix('vehicles')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/collection', [VehicleController::class, 'index'])->name('vehicles.collection');
     Route::get('/add', [VehicleController::class, 'add'])->name('vehicles.add');
