@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('vehicles')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/collection', [VehicleController::class, 'index'])->name('vehicles.collection');
     Route::get('/add', [VehicleController::class, 'add'])->name('vehicles.add');
-    // Route::get('/edit', [VehicleController::class, 'edit'])->name('vehicles.edit');
+    // Route::get('/edit/{id}', [VehicleController::class, 'add'])->name('vehicles.edit');
     Route::post('/', [VehicleController::class, 'create'])->name('vehicles.create');
     Route::get('/show', [VehicleController::class, 'show'])->name('vehicles.show');
     Route::patch('/', [VehicleController::class, 'update'])->name('vehicles.update');

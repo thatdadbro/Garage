@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('license_plate')->nullable();
             $table->string('mileage')->nullable();
             $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamp('purchased_at')->nullable();
 
             $table->timestamps();

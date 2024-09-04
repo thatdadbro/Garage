@@ -15,14 +15,14 @@ class VehicleController extends Controller
 
     public function add()
     {
-        return view('forms.add-vehicle');
+        return view('add-vehicle');
     }
 
     public function create(Request $request)
     {
         $request->validate([
             'name' => 'required',
-            'purchased' => 'required|date',
+            'purchased_at' => 'required|date',
             'year' => 'required|integer',
             'make' => 'required',
             'model' => 'required',
@@ -30,17 +30,18 @@ class VehicleController extends Controller
             'color' => 'required',
         ]);
 
-        $vehicle = new Vehicle();
-        $vehicle->fill($request->all());
-        $vehicle->user_id = auth()->id();
-        $vehicle->save();
+        $vehicle = Vehicle::create($request->all());
+
+        if ($request->hasFile('image')) {
+            $vehicle->uploadImage($request->file('image'));
+        }
 
         return redirect()->route('vehicles.collection');
     }
 
-    // public function edit(Request $request)
-    // {
-    //     $vehicle = Vehicle::find($request->id);
-    //     return view('forms.edit-vehicle', ['vehicle' => $vehicle]);
-    // }
+    public function edit(Request $request)
+    {
+        $vehicle = Vehicle::find($request->input('id'));
+        return view('edit-vehicle', ['vehicle' => $vehicle, 'id' => $request->input('id')]);
+    }
 }
