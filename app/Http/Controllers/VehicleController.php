@@ -44,4 +44,10 @@ class VehicleController extends Controller
         $vehicle = Vehicle::find($request->input('id'));
         return view('edit-vehicle', ['vehicle' => $vehicle, 'id' => $request->input('id')]);
     }
+
+    public function browse()
+    {
+        $vehicles = Vehicle::all();
+        return view('browse-vehicles', ['vehicles' => $vehicles]);
+    }
 }

@@ -10,6 +10,7 @@ Route::get('/', function () {
 
 Route::prefix('vehicles')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/collection', [VehicleController::class, 'index'])->name('vehicles.collection');
+    Route::get('/browse', [VehicleController::class, 'browse'])->name('vehicles.browse');
     Route::get('/add', [VehicleController::class, 'add'])->name('vehicles.add');
     // Route::get('/edit/{id}', [VehicleController::class, 'add'])->name('vehicles.edit');
     Route::post('/', [VehicleController::class, 'create'])->name('vehicles.create');
