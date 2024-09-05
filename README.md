@@ -9,6 +9,7 @@ An app I threw together in a day so I could have something to show iVisa, it's p
 - Start Sail in the background `sail up -d`
 - Install Node packages and build assets `sail pnpm install && sail pnpm run build`
 - Generate the app key (this is automatically inserted in .env) `sail artisan key:generate`
+- The application will run on port 80, access the app at http://localhost
 
 ## Possible errors
 I ran into an issue with the PHP version when trying to spin up this project. I upgraded by performing the following steps.
