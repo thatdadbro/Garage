@@ -22,6 +22,8 @@ I ran into an issue with the PHP version when trying to spin up this project. I 
 - `sudo apt install php8.3-fpm php8.3-cli php8.3-mysql php8.3-curl php8.3-gd php8.3-mbstring php8.3-xml php8.3-intl`
 - Choose the correct version `sudo update-alternatives --config php`
 
+<b>Seeing the default Apache screen?</b> Stop the service with `sudo service apache2 stop`
+
 ## Features to be added
 - Search
     - Add the ability for users to find cars via searching by make, model, year, condition, owner, license plate, VIN, etc...
