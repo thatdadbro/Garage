@@ -1,8 +1,4 @@
-# Garage Star
-An app I threw together in a day so I could have something to show iVisa, it's pretty simple with only a few classes.
-
-Devoloped in WSL2 on a Windows 11 machine.
-
+# Garage
 ## Running the project
 - Create the .env file `cp .env.example .env`
 - Create the database file (this is horrible and I only did it for the demo) `cp database/database.sqlite.example database/database.sqlite`
